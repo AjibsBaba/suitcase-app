@@ -1,5 +1,6 @@
 package com.application.suitcase.ui.suitcase
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -31,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.application.suitcase.SuitcaseNavBar
 import com.application.suitcase.model.Suitcase
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -118,6 +120,28 @@ fun SuitcaseItem(suitcase: Suitcase) {
     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(text = suitcase.name)
         Text(text = "Price: ${suitcase.price}")
+    }
+}
+
+
+@SuppressLint("StateFlowValueCalledInComposition")
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun PurchasedScreen(navController: NavController, viewModel: SuitcaseViewModel) {
+
+
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Purchased Suitcases")}) },
+        bottomBar = {
+            SuitcaseNavBar(index = 1, navController)
+        },
+    ) {
+        innerPadding ->
+        Column(modifier = Modifier
+            .padding(innerPadding)
+            .padding(20.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+           Text("No item has been purchased")
+        }
     }
 }
 

@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.application.suitcase.NavigationRoutes
+import com.application.suitcase.SuitcaseNavBar
 import com.application.suitcase.ui.suitcase.SuitcaseList
 import com.application.suitcase.ui.theme.Purple80
 
@@ -38,10 +39,11 @@ import com.application.suitcase.ui.theme.Purple80
 fun HomeScreen(navController: NavController = rememberNavController(), viewModel: HomeViewModel) {
 
     val userName = viewModel.name.value
-
     val suitcases by viewModel.suitcases.collectAsState()
 
-    Scaffold(topBar = { TopAppBar(title = {
+
+    Scaffold(
+        topBar = { TopAppBar(title = {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Box(modifier = Modifier
                 .height(40.dp)
@@ -51,13 +53,16 @@ fun HomeScreen(navController: NavController = rememberNavController(), viewModel
                 Text("Hello $userName", fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 Text("Welcome back!", fontSize = 14.sp, fontWeight = FontWeight.Normal)
             }
-        }
-        }) },
+        } },
+            ) },
         floatingActionButton = {
             FloatingActionButton(
-            onClick = { navController.navigate(NavigationRoutes.SUITCASE_SCREEN) }) {
+            onClick = { navController.navigate(NavigationRoutes.SUITCASE_SCREEN) }
+            ) {
                 Icon(Icons.Filled.Add, "Floating action button.")
             }
+        }, bottomBar = {
+            SuitcaseNavBar(index = 0, navController)
         }) {
             innerPadding ->
         Column(modifier = Modifier
@@ -67,6 +72,8 @@ fun HomeScreen(navController: NavController = rememberNavController(), viewModel
         }
     }
 }
+
+
 
 
 @Composable

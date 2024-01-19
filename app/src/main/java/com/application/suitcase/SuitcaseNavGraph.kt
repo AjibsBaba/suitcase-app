@@ -16,7 +16,9 @@ import com.application.suitcase.ui.auth.register.RegistrationViewModel
 import com.application.suitcase.ui.home.HomeScreen
 import com.application.suitcase.ui.home.HomeViewModel
 import com.application.suitcase.ui.onboarding.OnboardingScreen
+import com.application.suitcase.ui.profile.ProfileScreen
 import com.application.suitcase.ui.suitcase.AddSuitcase
+import com.application.suitcase.ui.suitcase.PurchasedScreen
 import com.application.suitcase.ui.suitcase.SuitcaseViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -66,6 +68,12 @@ fun NavGraph(
         }
         composable(NavigationRoutes.SUITCASE_SCREEN) {
             AddSuitcase(viewModel = SuitcaseViewModel(), navController = navController)
+        }
+        composable(NavigationRoutes.PROFILE_SCREEN) {
+            ProfileScreen(navController = navController, viewModel = HomeViewModel())
+        }
+        composable(NavigationRoutes.PURCHASED_SCREEN) {
+            PurchasedScreen(navController = navController, viewModel = SuitcaseViewModel())
         }
     }
 }

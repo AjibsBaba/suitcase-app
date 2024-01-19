@@ -11,4 +11,6 @@ object NavigationRoutes {
     const val PASSWORD_RESET_SCREEN = "password_reset"
     const val HOME_SCREEN = "home"
     const val SUITCASE_SCREEN = "add_suitcase"
+    const val PROFILE_SCREEN = "profile"
+    const val PURCHASED_SCREEN = "purchased"
 }

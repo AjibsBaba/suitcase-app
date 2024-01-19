@@ -39,9 +39,6 @@ class LoginViewModel @Inject constructor(): ViewModel(){
         _isAuthenticated.value = auth.currentUser != null
     }
 
-    fun signOut() {
-        auth.signOut()
-        _isAuthenticated.value = false
-    }
+
 
 }

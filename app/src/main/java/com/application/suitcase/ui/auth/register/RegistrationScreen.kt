@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -53,7 +54,7 @@ fun RegistrationScreen(navController: NavController = rememberNavController(), v
                     onClick = { navController.popBackStack() },
                     colors = IconButtonDefaults.outlinedIconButtonColors(contentColor = Color.Black))
                      {
-                        Icons.Default.ArrowBack
+                         Icon(Icons.Filled.ArrowBack, "Back Button")
                     }
             })
         },

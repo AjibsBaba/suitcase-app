@@ -7,9 +7,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -32,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.application.suitcase.NavigationRoutes
 import com.application.suitcase.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +54,7 @@ fun LoginScreen(navController: NavController = rememberNavController(), viewMode
                 onClick = { navController.popBackStack() },
                 colors = IconButtonDefaults.outlinedIconButtonColors(contentColor = Color.Black))
             {
-                Icons.Outlined.ArrowBack
+                Icon(Icons.Filled.ArrowBack, "Back Button")
             }
         })
     }) {
@@ -72,7 +74,7 @@ fun LoginScreen(navController: NavController = rememberNavController(), viewMode
                     label = { Text("Password")}, singleLine = true, modifier = Modifier.fillMaxWidth(),
                     visualTransformation = PasswordVisualTransformation())
             }
-            TextButton(onClick = { /*TODO*/ }, modifier = Modifier.padding(vertical = 4.dp)) {
+            TextButton(onClick = { navController.navigate(NavigationRoutes.PASSWORD_RESET_SCREEN) }, modifier = Modifier.padding(vertical = 4.dp)) {
                 Text("Reset Password")
             }
             Button(onClick = { viewModel.signIn(navController, emailAddress.trim(), password.trim()) }, modifier = Modifier
