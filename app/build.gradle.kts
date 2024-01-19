@@ -69,6 +69,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0-beta02")
     implementation("androidx.navigation:navigation-compose:2.7.5")
     implementation("androidx.core:core-splashscreen:1.0.0-beta02")
+    implementation("com.alexstyl.swipeablecard:swipeablecard:0.1.0")
 
     // Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.48.1")
