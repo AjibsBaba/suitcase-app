@@ -1,9 +1,11 @@
 # Suitcase App
 
-Suitcase is an experimental record app, built with [Jetpack][compose]. The goal of this app to create
+Suitcase is an experimental record app, built with [Jetpack][compose]. The goal of this app to
+create
 the UI in Compose and handle authentication and database logic with [Firebase][]
 
-This app makes use of 
+This app makes use of
+
 * Jetpack Compose
 * Dagger hilt
 * Firebase
@@ -25,7 +27,9 @@ Package [`com.application.suitcase`][1]
 [`SuitcaseNavGraph.kt`][3] configures the navigation routes and actions in the app.
 
 [1]: app/src/main/java/com/application/suitcase
+
 [2]: app/src/main/java/com/application/suitcase/SuitcaseApp.kt
+
 [3]: app/src/main/java/com/application/suitcase/SuitcaseNavGraph.kt
 
 ### Data
@@ -34,4 +38,5 @@ The data in the sample is static, held in the `com.application.suitcase.model` p
 
 
 [compose]: https://developer.android.com/jetpack/compose
+
 [Firebase]: https://firebase.google.com
