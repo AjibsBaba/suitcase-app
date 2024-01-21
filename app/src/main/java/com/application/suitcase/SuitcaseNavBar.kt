@@ -15,12 +15,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 
+/**
+ * Navigation Bar used in the ([SuitcaseApp])
+ */
+
 @Composable
 fun SuitcaseNavBar(index: Int = 0, navController: NavController) {
     var selectedItem by remember { mutableIntStateOf(index) }
     val items = listOf("Suitcases", "Purchased", "Profile")
     val icons = listOf(Icons.Filled.Home, Icons.Filled.ShoppingCart, Icons.Filled.Person)
-    val routes = listOf(NavigationRoutes.HOME_SCREEN, NavigationRoutes.PURCHASED_SCREEN, NavigationRoutes.PROFILE_SCREEN)
+    val routes = listOf(
+        NavigationRoutes.HOME_SCREEN,
+        NavigationRoutes.PURCHASED_SCREEN,
+        NavigationRoutes.PROFILE_SCREEN
+    )
 
     NavigationBar {
         items.forEachIndexed { index, item ->

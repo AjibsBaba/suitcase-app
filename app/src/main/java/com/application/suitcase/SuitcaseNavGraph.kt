@@ -25,15 +25,15 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 /**
- * Destinations used in the ([SuitcaseApp])
+ * Navigation Config used in the ([SuitcaseApp])
  */
-
 
 
 @Composable
 fun NavGraph(
     navController: NavHostController = rememberNavController(),
-    startDestination: String = NavigationRoutes.ONBOARDING_SCREEN) {
+    startDestination: String = NavigationRoutes.ONBOARDING_SCREEN
+) {
 
 
     val loginViewModel = remember { LoginViewModel() }
